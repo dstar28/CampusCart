@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MacBook Air M1 — CampusCart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="aurora"></div>
+<nav class="nav">
+  <a href="index.html" class="brand"><span class="brand-mark"></span> CampusCart</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+  <div class="nav-actions" id="navActions">
+    <a class="btn btn-sm btn-ghost" href="login.html">Sign in</a>
+    <a class="btn btn-sm btn-primary" href="signup.html">List item</a>
+  </div>
+</nav>
+<div class="container">
+  <div style="padding:30px 0 0;font-size:13px;color:var(--ink-mute)">
+    <a href="marketplace.html">Marketplace</a> / <a href="marketplace.html">Electronics</a> / <span style="color:var(--ink)">MacBook Air M1</span>
+  </div>
+  <div class="pdp">
+    <div class="gallery">
+      <div class="main t-tech">💻</div>
+      <div class="thumbs">
+        <div class="t t-tech" data-cls="t-tech">💻</div>
+        <div class="t t-tech" data-cls="t-tech">⌨️</div>
+        <div class="t t-room" data-cls="t-room">🖱️</div>
+        <div class="t t-station" data-cls="t-station">🎒</div>
+      </div>
+    </div>
+    <div class="pdp-info">
+      <span id="categoryBadge"
+      class="badge"
+      style="position:static;background:var(--glass-bg);border:1px solid var(--line);display:inline-block;padding:4px 10px;border-radius:100px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-dim)">
+</span>
+
+<h1 id="productTitle" style="margin-top:14px"></h1>
+
+<span id="productPrice" class="price-tag"></span>
+
+<p id="productDescription" class="desc"></p>
+      <div class="spec-grid">
+  <div class="spec">
+      <div class="k">Condition</div>
+      <div id="productCondition" class="v"></div>
+  </div>
+
+  <div class="spec">
+      <div class="k">Category</div>
+      <div id="productCategory" class="v"></div>
+  </div>
+</div>
+      <div class="seller-card">
+        <span class="avatar">T</span>
+        <div class="info">
+          <div id="sellerEmail" class="name"></div>
+<div class="sub">Verified Seller</div>
+        </div>
+        <a class="btn btn-sm" href="#">View profile</a>
+      </div>
+      <div class="pdp-actions">
+        <button id="contactSeller"
+        class="btn btn-primary btn-lg"
+        style="flex:1;justify-content:center">
+    📞 Contact Seller
+</button>
+        <button class="btn btn-lg save" style="padding:14px 18px">♡ Save</button>
+      </div>
+      <div class="seller-card" style="margin-top:24px;background:linear-gradient(135deg,rgba(75,140,255,0.12),rgba(138,92,255,0.12))">
+        <span style="font-size:22px">🛡️</span>
+        <div class="info"><div class="name">CampusCart safety</div><div class="sub">Meet in a public campus spot. Always inspect before paying.</div></div>
+      </div>
+    </div>
+  </div>
+  
+    
+</div>
+<footer class="container">
+  <div class="foot-bottom"><span>© 2026 CampusCart</span><span>Verified student marketplace</span></div>
+</footer>
+<script>
+
+async function loadProduct(){
+
+    const id =
+        localStorage.getItem(
+            "selectedProductId"
+        );
+
+    if(!id) return;
+
+    const response =
+        await fetch(
+            `http://localhost:8080/api/products/${id}`
+        );
+
+    const product =
+        await response.json();
+
+    document.getElementById(
+        "productTitle"
+    ).innerText =
+        product.title;
+
+    document.getElementById(
+        "productDescription"
+    ).innerText =
+        product.description;
+
+    document.getElementById(
+        "productPrice"
+    ).innerText =
+        "₹" + product.price;
+
+    document.getElementById(
+        "productCondition"
+    ).innerText =
+        product.condition;
+
+    document.getElementById(
+        "productCategory"
+    ).innerText =
+        product.category;
+
+    document.getElementById(
+        "categoryBadge"
+    ).innerText =
+        product.category;
+
+    const phoneResponse =
+        await fetch(
+            `http://localhost:8080/api/auth/phone/${product.sellerEmail}`
+        );
+
+    const phoneNumber =
+        await phoneResponse.text();
+
+    document.getElementById(
+        "sellerEmail"
+    ).innerText =
+        phoneNumber;
+
+    document
+        .getElementById(
+            "contactSeller"
+        )
+        .addEventListener(
+            "click",
+            () => {
+
+                window.open(
+                    `https://wa.me/91${phoneNumber}`,
+                    "_blank"
+                );
+            }
+        );
+}
+
+loadProduct();
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sign in — CampusCart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="auth-shell">
+  <div class="auth-art">
+    <a href="index.html" class="brand"><span class="brand-mark"></span> CampusCart</a>
+    <div>
+      <h2>Your campus <span class="gradient-text">marketplace</span>, beautifully simple.</h2>
+      <p style="color:var(--ink-dim);margin-top:18px;max-width:380px;line-height:1.6">Sign in to message sellers, save listings, and manage everything you've put up for sale.</p>
+    </div>
+    <div class="quote">
+      <p>"Sold three textbooks before lunch. CampusCart just works." </p>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:12px"><span class="avatar">D</span><div><div style="font-weight:600;font-size:13px">Devraj M.</div><div style="font-size:12px;color:var(--ink-mute)">BITS Pilani</div></div></div>
+    </div>
+  </div>
+  <div class="auth-form-wrap">
+    <form class="auth-form">
+      <h1>Welcome back</h1>
+      <p class="sub">Sign in with your student account to continue.</p>
+      <div class="field"><label>College email</label><input type="email" placeholder="you@university.edu" required /></div>
+      <div class="field"><label>Password</label><input type="password" placeholder="••••••••" required /></div>
+      <div class="row-between">
+        <label style="display:flex;gap:6px;align-items:center"><input type="checkbox"> Remember me</label>
+        <a href="forgot.html">Forgot password?</a>
+      </div>
+      <button class="btn btn-primary" type="submit">Sign in →</button>
+      <div class="divider">or continue with</div>
+      <div class="social-row">
+        <button class="btn" type="button">G  Google</button>
+        <button class="btn" type="button">  Apple</button>
+      </div>
+      <div class="alt">New to CampusCart? <a href="signup.html">Create an account</a></div>
+    </form>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

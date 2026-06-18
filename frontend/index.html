@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CampusCart — Buy, Sell & Exchange Within Your Campus</title>
+<meta name="description" content="The premium student marketplace for books, electronics, hostel essentials and more — exclusive to your campus." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="aurora"></div>
+<nav class="nav">
+  <a href="index.html" class="brand"><span class="brand-mark"></span> CampusCart</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+<div class="nav-actions" id="navActions">
+    <a class="btn btn-sm btn-ghost" href="login.html">Sign in</a>
+    <a class="btn btn-sm btn-primary" href="signup.html">Get Started</a>
+</div>
+</nav>
+<header class="hero container">
+  <span class="eyebrow"><span class="dot"></span> Verified students only · 50,000+ active campuses</span>
+  <h1>Buy, Sell & Exchange<br/><span class="accent">Within Your Campus</span></h1>
+  <p class="lede">The premium marketplace built exclusively for students. Discover great deals on textbooks, electronics, and hostel essentials — all from peers a few blocks away.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary btn-lg" href="marketplace.html">Browse marketplace →</a>
+   <a class="btn btn-lg" id="listItemBtn" href="#">List an item</a>
+  </div>
+  <form class="glass-search" onsubmit="event.preventDefault(); location.href='marketplace.html'">
+    <span style="font-size:18px">🔍</span>
+    <input placeholder="Search textbooks, laptops, mini-fridges…" />
+   
+    <button class="btn btn-primary btn-sm" type="submit">Search</button>
+  </form>
+  <div class="float-stage" aria-hidden="true">
+    <div class="float-card fc-1"><div class="thumb t-book">📚</div><h4>Calculus 8th Ed.</h4><div class="meta">Like new · Anya R.</div><span class="price">₹420</span></div>
+    <div class="float-card fc-2"><div class="thumb t-tech">💻</div><h4>MacBook Air M1</h4><div class="meta">Excellent · Marcus T.</div><span class="price">₹54,000</span></div>
+    <div class="float-card fc-3"><div class="thumb t-room">🛋️</div><h4>Bean bag chair</h4><div class="meta">Good · Priya S.</div><span class="price">₹1,200</span></div>
+  </div>
+</header>
+<section class="container">
+  <div class="section-head reveal">
+    <h2>Browse by <span class="gradient-text">category</span></h2>
+    <p>Everything a student needs — sorted, verified, and ready to claim.</p>
+  </div>
+  <div class="chips reveal">
+    <a class="chip" href="marketplace.html"><span class="ico">📚</span> Textbooks</a>
+    <a class="chip" href="marketplace.html"><span class="ico">💻</span> Electronics</a>
+    <a class="chip" href="marketplace.html"><span class="ico">🛏️</span> Hostel</a>
+    <a class="chip" href="marketplace.html"><span class="ico">✏️</span> Stationery</a>
+    <a class="chip" href="marketplace.html"><span class="ico">🚲</span> Cycles</a>
+    <a class="chip" href="marketplace.html"><span class="ico">👕</span> Clothing</a>
+    <a class="chip" href="marketplace.html"><span class="ico">🎧</span> Music</a>
+    <a class="chip" href="marketplace.html"><span class="ico">🏸</span> Sports</a>
+  </div>
+</section>
+<section class="container">
+  <div class="section-head reveal">
+    <h2>Trending <span class="gradient-text">on campus</span></h2>
+    <p>Most-saved listings from students around you this week.</p>
+  </div>
+  <div class="grid reveal" id="product-grid">
+    <a class="product" href="product.html"><span class="badge">Trending</span><button class="save">♡</button><div class="thumb t-tech">🎧</div><h3>Sony WH-1000XM4</h3><div class="row"><span class="price">₹12,500</span><span style="font-size:12px;color:var(--ink-mute)">Like new</span></div><div class="seller"><span class="avatar">A</span> Aanya · CS '26</div></a>
+    <a class="product" href="product.html"><span class="badge">New</span><button class="save">♡</button><div class="thumb t-book">📖</div><h3>Intro to Algorithms</h3><div class="row"><span class="price">₹650</span><span style="font-size:12px;color:var(--ink-mute)">Good</span></div><div class="seller"><span class="avatar">R</span> Rahul · Math '25</div></a>
+    <a class="product" href="product.html"><span class="badge">Hot</span><button class="save">♡</button><div class="thumb t-room">🪑</div><h3>Study chair</h3><div class="row"><span class="price">₹2,400</span><span style="font-size:12px;color:var(--ink-mute)">Excellent</span></div><div class="seller"><span class="avatar">M</span> Maya · Design '27</div></a>
+    <a class="product" href="product.html"><span class="badge">Deal</span><button class="save">♡</button><div class="thumb t-cycle">🚲</div><h3>Mountain bike</h3><div class="row"><span class="price">₹6,800</span><span style="font-size:12px;color:var(--ink-mute)">Good</span></div><div class="seller"><span class="avatar">K</span> Kabir · ME '25</div></a>
+  </div>
+</section>
+<section class="container">
+  <div class="section-head reveal">
+    <h2>Why <span class="gradient-text">CampusCart</span></h2>
+    <p>Built for students, not flea-market chaos.</p>
+  </div>
+  <div class="features">
+    <div class="feature reveal"><div class="ico-box">🛡️</div><h3>Verified students</h3><p>Every seller is verified with a college email. No bots, no scams, just peers.</p></div>
+    <div class="feature reveal"><div class="ico-box">⚡</div><h3>Hyperlocal speed</h3><p>Most pickups happen the same day — your buyer is in the next hostel block.</p></div>
+    <div class="feature reveal"><div class="ico-box">💸</div><h3>Zero commission</h3><p>List and sell for free. You keep 100% of what you make.</p></div>
+    <div class="feature reveal"><div class="ico-box">⭐</div><h3>Trust scores</h3><p>Ratings and reviews surface the most reliable sellers on your campus.</p></div>
+  </div>
+</section>
+<section class="container">
+  <div class="section-head reveal">
+    <h2>Loved by <span class="gradient-text">50,000+ students</span></h2>
+  </div>
+  <div class="testimonials">
+    <div class="testimonial reveal"><p>"Sold my old textbooks in two days and got a great deal on a used iPad. The app is genuinely beautiful."</p><div class="who"><span class="avatar">S</span><div><div class="name">Sneha K.</div><div class="sub">IIT Bombay · CSE</div></div></div></div>
+    <div class="testimonial reveal"><p>"Feels like a startup app, not a campus board. Found a mini-fridge five minutes from my hostel."</p><div class="who"><span class="avatar">D</span><div><div class="name">Devraj M.</div><div class="sub">BITS Pilani · ECE</div></div></div></div>
+    <div class="testimonial reveal"><p>"I trust the listings because everyone is verified. Saved me ₹40k on a laptop my senior was selling."</p><div class="who"><span class="avatar">L</span><div><div class="name">Liya P.</div><div class="sub">Manipal · Design</div></div></div></div>
+  </div>
+</section>
+<section class="container">
+  <div class="cta-card reveal">
+    <h2 style="font-size:clamp(28px,4vw,42px);letter-spacing:-0.025em;font-weight:800;">Ready to clear your room <span class="gradient-text">and earn?</span></h2>
+    <p style="color:var(--ink-dim);margin:14px auto 26px;max-width:520px;">Join thousands of students already trading on CampusCart. Setup takes 30 seconds.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary btn-lg" href="signup.html">Create free account</a>
+      <a class="btn btn-lg" href="marketplace.html">Browse first</a>
+    </div>
+  </div>
+</section>
+<footer class="container">
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="brand" style="display:inline-flex;margin-bottom:14px"><span class="brand-mark"></span> CampusCart</a>
+      <p style="color:var(--ink-dim);font-size:14px;max-width:320px;line-height:1.6">The premium marketplace built exclusively for college students. Buy, sell, exchange — within your campus.</p>
+    </div>
+    <div><h5>Product</h5><a href="marketplace.html">Marketplace</a><a href="dashboard.html">Dashboard</a><a href="#">Mobile app</a></div>
+    <div><h5>Company</h5><a href="#">About</a><a href="#">Careers</a><a href="#">Blog</a></div>
+    <div><h5>Support</h5><a href="#">Help center</a><a href="#">Safety</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 CampusCart. All rights reserved.</span>
+    <span>Made with ♥ for students</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

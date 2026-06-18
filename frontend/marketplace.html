@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Marketplace — CampusCart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="aurora"></div>
+<nav class="nav">
+  <a href="index.html" class="brand"><span class="brand-mark"></span> CampusCart</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="dashboard.html">Dashboard</a>
+  </div>
+  <div class="nav-actions" id="navActions">
+    <a class="btn btn-sm btn-ghost" href="login.html">Sign in</a>
+    <a class="btn btn-sm btn-primary" href="signup.html">List item</a>
+  </div>
+</nav>
+<div class="container">
+  <header style="padding:50px 0 20px;text-align:center">
+    <h1 style="font-size:clamp(32px,5vw,52px);letter-spacing:-0.03em;font-weight:800">Campus <span class="gradient-text">marketplace</span></h1>
+    <p style="color:var(--ink-dim);margin-top:12px">Real listings from real students at your university.</p>
+    <form class="glass-search" onsubmit="event.preventDefault()" style="margin-top:28px">
+      <span style="font-size:18px">🔍</span>
+      <input id="market-search" placeholder="Search listings…" />
+      <button class="btn btn-primary btn-sm" type="submit">Search</button>
+    </form>
+  </header>
+  <div class="market-wrap">
+    <aside class="sidebar">
+      <h4>Category</h4>
+      <div class="filter-list">
+        <label><input type="checkbox" value="Books"> Books</label>
+<label><input type="checkbox" value="Electronics"> Electronics</label>
+<label><input type="checkbox" value="Hostel"> Hostel</label>
+<label><input type="checkbox" value="Stationery"> Stationery</label>
+<label><input type="checkbox" value="Cycle"> Cycles</label>
+<label><input type="checkbox" value="Clothing"> Clothing</label>
+<label><input type="checkbox" value="Music"> Music</label>
+<label><input type="checkbox" value="Sports"> Sports</label>
+      </div>
+      <h4>Price</h4>
+      <div class="price-range">
+        <input placeholder="Min ₹" />
+        <input placeholder="Max ₹" />
+      </div>
+      <h4>Condition</h4>
+      <div class="filter-list">
+        <label><input type="checkbox"> Like new</label>
+        <label><input type="checkbox"> Excellent</label>
+        <label><input type="checkbox"> Good</label>
+        <label><input type="checkbox"> Fair</label>
+      </div>
+      
+    </aside>
+    <main>
+      <div class="toolbar">
+        <h2>Listings on your campus</h2>
+        <div class="controls">
+          <select id="sort" class="btn btn-sm" style="padding-right:14px">
+            <option value="">Sort: Recommended</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid" id="product-grid"></div>
+    </main>
+  </div>
+</div>
+<footer class="container">
+  <div class="foot-bottom"><span>© 2026 CampusCart</span><span>Verified student marketplace</span></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
