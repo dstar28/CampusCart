@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
             form.querySelector('input[type="password"]').value;
 
           const response = await fetch(
-            "http://localhost:8080/api/auth/login",
+            "https://campuscart-backend-latest.onrender.com/api/auth/login",
             {
               method: "POST",
               headers: {
@@ -191,7 +191,7 @@ else if (page.includes("signup")) {
         inputs[4].value;
 
     const response = await fetch(
-        "http://localhost:8080/api/auth/register",
+        "https://campuscart-backend-latest.onrender.com/api/auth/register",
         {
             method: "POST",
             headers: {
@@ -396,7 +396,7 @@ async function loadProducts() {
 
         const response =
             await fetch(
-                "http://localhost:8080/api/products"
+                "https://campuscart-backend-latest.onrender.com/api/products"
             );
 
         const products =
@@ -470,7 +470,7 @@ async function loadMyProducts() {
 
         const response =
             await fetch(
-                `http://localhost:8080/api/products/seller/${email}`
+                `https://campuscart-backend-latest.onrender.com/api/products/seller/${email}`
             );
 
         const products =
@@ -525,7 +525,7 @@ async function markSold(id){
 
     const response =
         await fetch(
-            `http://localhost:8080/api/products/${id}/sold`,
+            `https://campuscart-backend-latest.onrender.com/api/products/${id}/sold`,
             {
                 method:"PUT"
             }
@@ -664,7 +664,7 @@ if(productForm){
 
             const response =
                 await fetch(
-                    "http://localhost:8080/api/products",
+                    "https://campuscart-backend-latest.onrender.com/api/products",
                     {
                         method:"POST",
                         headers:{

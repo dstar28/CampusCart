@@ -12,29 +12,27 @@ import java.io.IOException;
 @CrossOrigin("*")
 public class FileController {
 
-    @PostMapping
-    public ResponseEntity<String> uploadFile(
-            @RequestParam("file") MultipartFile file)
-            throws IOException {
+        @PostMapping
+        public ResponseEntity<String> uploadFile(
+                        @RequestParam("file") MultipartFile file)
+                        throws IOException {
 
-        String uploadDir = "uploads/";
+                String uploadDir = "uploads/";
 
-        File directory = new File(uploadDir);
+                File directory = new File(uploadDir);
 
-        if (!directory.exists()) {
-            directory.mkdirs();
+                if (!directory.exists()) {
+                        directory.mkdirs();
+                }
+
+                String fileName = System.currentTimeMillis()
+                                + "_" + file.getOriginalFilename();
+
+                File destination = new File(uploadDir + fileName);
+
+                file.transferTo(destination);
+
+                return ResponseEntity.ok(
+                                "https://campuscart-backend-latest.onrender.com/uploads/" + fileName);
         }
-
-        String fileName = System.currentTimeMillis()
-                + "_" + file.getOriginalFilename();
-
-        File destination =
-                new File(uploadDir + fileName);
-
-        file.transferTo(destination);
-
-        return ResponseEntity.ok(
-                "http://localhost:8080/uploads/" + fileName
-        );
-    }
 }
